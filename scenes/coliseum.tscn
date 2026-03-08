@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cm2c1ac6xf6fv"]
+
+[ext_resource type="Texture2D" uid="uid://o8scpsm1qic2" path="res://icon.svg" id="1_xnuo1"]
+[ext_resource type="PackedScene" uid="uid://dm0xpfooe2kgl" path="res://scenes/wizard.tscn" id="2_1a3q4"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_4v5ai"]
+
+[node name="Coliseum" type="Node2D" unique_id=144620549]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=766710161]
+modulate = Color(0.50572455, 0.37808636, 0.36114234, 1)
+offset_right = 1440.0
+offset_bottom = 810.0
+texture = SubResource("CanvasTexture_4v5ai")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=640917216]
+position = Vector2(601, 350)
+texture = ExtResource("1_xnuo1")
+
+[node name="Wizard" parent="." unique_id=478944359 instance=ExtResource("2_1a3q4")]
+position = Vector2(588, 349)
