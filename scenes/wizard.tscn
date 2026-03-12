@@ -24,18 +24,6 @@ tracks/0/keys = {
 "update": 1,
 "values": [ExtResource("2_8qlyk")]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-0.08726646]
-}
 
 [sub_resource type="Animation" id="Animation_8j7pf"]
 resource_name = "idle"
@@ -93,7 +81,6 @@ _data = {
 script = ExtResource("1_5ipgv")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2003412689]
-rotation = -0.08726646
 texture = ExtResource("2_8qlyk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=792170438]
@@ -109,8 +96,9 @@ zoom = Vector2(5, 5)
 [node name="Pivot" type="Node2D" parent="." unique_id=888685773]
 position = Vector2(0, 2)
 
-[node name="Sprite2D" type="Sprite2D" parent="Pivot" unique_id=688061214]
-position = Vector2(3, 0)
+[node name="Wand" type="Sprite2D" parent="Pivot" unique_id=688061214]
+position = Vector2(5, 0)
 texture = ExtResource("6_8qlyk")
+offset = Vector2(-2, 0.5)
 region_enabled = true
 region_rect = Rect2(6, 8, 4, 1)

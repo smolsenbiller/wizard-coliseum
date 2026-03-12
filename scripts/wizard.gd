@@ -5,7 +5,10 @@ const JUMP_VELOCITY = -400.0
 
 @onready var animator : AnimationPlayer = $AnimationPlayer
 @onready var sprite : Sprite2D = $Sprite2D
+@onready var wand_sprite : Sprite2D = $Pivot/Wand
 @onready var pivot : Node2D = $Pivot
+
+var magic_shot_scene : PackedScene = preload("res://scenes/magic_shot.tscn")
 
 
 func _physics_process(delta: float) -> void:
@@ -28,4 +31,18 @@ func _physics_process(delta: float) -> void:
 	if  character_look_direction.x < 0:
 		sprite.flip_h = true
 	
+	if Input.is_action_just_pressed("shoot"):
+		magic_blast()
+	
 	move_and_slide()
+
+func magic_blast():
+	var magic_shot = magic_shot_scene.instantiate()
+	
+	magic_shot.global_position = wand_sprite.global_position
+	
+	var target = get_global_mouse_position()
+	var dir = (target - wand_sprite.global_position).normalized()
+	magic_shot.direction = dir
+	magic_shot.rotation = dir.angle()
+	get_tree().root.add_child(magic_shot)

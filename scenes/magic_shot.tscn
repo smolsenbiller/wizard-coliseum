@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://u6fnev54t4y2"]
+
+[ext_resource type="Script" uid="uid://b1enuup4jds2a" path="res://scenes/magic_shot.gd" id="1_a63ct"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_8d2he"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a63ct"]
+size = Vector2(1, 1)
+
+[node name="MagicShot" type="Area2D" unique_id=609741988]
+script = ExtResource("1_a63ct")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2043239283]
+self_modulate = Color(1, 0, 0, 1)
+offset_right = 1.0
+offset_bottom = 1.0
+texture = SubResource("CanvasTexture_8d2he")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=768080588]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_a63ct")
