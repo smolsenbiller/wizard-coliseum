@@ -17,18 +17,14 @@ func _physics_process(delta: float) -> void:
 	
 	pivot.look_at(mouse_location)
 	
-	
 	#Animation
 	if velocity != Vector2.ZERO:
 		animator.play("walking")
 	else:
 		animator.play("idle")
-	
-	
 	#Looking direction
 	if character_look_direction.x > 0:
 		sprite.flip_h = false
-	
 	if  character_look_direction.x < 0:
 		sprite.flip_h = true
 	
