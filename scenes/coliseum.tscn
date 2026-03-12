@@ -8,7 +8,7 @@
 [node name="Coliseum" type="Node2D" unique_id=144620549]
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=766710161]
-modulate = Color(0.50572455, 0.37808636, 0.36114234, 1)
+modulate = Color(0.2784314, 0.54901963, 0.7490196, 1)
 offset_right = 1440.0
 offset_bottom = 810.0
 texture = SubResource("CanvasTexture_4v5ai")

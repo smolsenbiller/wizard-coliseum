@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cbdw3yd2ltbwr" path="res://assets/16-bit-wizard-frame2.png" id="3_4jkov"]
 [ext_resource type="Texture2D" uid="uid://bk22jorre3j5u" path="res://assets/16-bit-wizard-frame3.png" id="4_ba5mt"]
 [ext_resource type="Texture2D" uid="uid://c3e3dbrhj32g6" path="res://assets/16-bit-wizard-frame4.png" id="5_var7a"]
+[ext_resource type="Texture2D" uid="uid://caf74oiwlothy" path="res://assets/wand.png" id="6_8qlyk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4v5ai"]
 size = Vector2(4, 13)
@@ -92,6 +93,7 @@ _data = {
 script = ExtResource("1_5ipgv")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2003412689]
+rotation = -0.08726646
 texture = ExtResource("2_8qlyk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=792170438]
@@ -103,3 +105,12 @@ libraries/ = SubResource("AnimationLibrary_fmmlm")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2121674251]
 zoom = Vector2(5, 5)
+
+[node name="Pivot" type="Node2D" parent="." unique_id=888685773]
+position = Vector2(0, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Pivot" unique_id=688061214]
+position = Vector2(3, 0)
+texture = ExtResource("6_8qlyk")
+region_enabled = true
+region_rect = Rect2(6, 8, 4, 1)
