@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Wizard's Coliseum"
-run/main_scene="uid://cm2c1ac6xf6fv"
+run/main_scene="uid://6f7w2ltwmki1"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Lobby="*uid://ctsxuhvqjdsee"
 
 [display]
 

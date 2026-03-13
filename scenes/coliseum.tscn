@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cm2c1ac6xf6fv"]
 
+[ext_resource type="Script" uid="uid://lwilcxf03kxm" path="res://scripts/coliseum.gd" id="1_1a3q4"]
 [ext_resource type="PackedScene" uid="uid://dm0xpfooe2kgl" path="res://scenes/wizard.tscn" id="2_1a3q4"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_4v5ai"]
@@ -13,6 +14,7 @@
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4v5ai"]
 
 [node name="Coliseum" type="Node2D" unique_id=144620549]
+script = ExtResource("1_1a3q4")
 
 [node name="TextureRect5" type="TextureRect" parent="." unique_id=964062881]
 offset_left = -5.0
@@ -69,4 +71,4 @@ offset_bottom = 320.0
 texture = SubResource("CanvasTexture_4v5ai")
 
 [node name="Wizard" parent="." unique_id=478944359 instance=ExtResource("2_1a3q4")]
-position = Vector2(309, 139)
+position = Vector2(162, 100)
