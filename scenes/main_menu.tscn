@@ -2,45 +2,8 @@
 
 [ext_resource type="Script" uid="uid://3q870asmgbh1" path="res://scripts/main_menu.gd" id="1_bqqt6"]
 [ext_resource type="Texture2D" uid="uid://foma77rgrx3p" path="res://assets/16-bit-wizard-frame1.png" id="1_ekxnf"]
+[ext_resource type="Theme" uid="uid://b345eflrtsqvr" path="res://assets/resources/menu_themes.tres" id="1_wu84c"]
 [ext_resource type="Texture2D" uid="uid://caf74oiwlothy" path="res://assets/wand.png" id="2_bqqt6"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu84c"]
-bg_color = Color(0.5647059, 0.36862746, 0.6627451, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ln24"]
-bg_color = Color(0.35017446, 0.20787585, 0.4201019, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekxnf"]
-bg_color = Color(0.1923804, 0.10435011, 0.23624936, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
-[sub_resource type="Theme" id="Theme_rtw2f"]
-Button/colors/font_color = Color(1, 0.8034735, 0.8473944, 1)
-Button/font_sizes/font_size = 100
-Button/styles/hover = SubResource("StyleBoxFlat_wu84c")
-Button/styles/normal = SubResource("StyleBoxFlat_8ln24")
-Button/styles/pressed = SubResource("StyleBoxFlat_ekxnf")
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_oa1go"]
 
@@ -57,7 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_rtw2f")
+theme = ExtResource("1_wu84c")
 script = ExtResource("1_bqqt6")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=690308530]
@@ -141,6 +104,15 @@ size_flags_horizontal = 4
 size_flags_vertical = 2
 text = "Quit"
 
+[node name="EnterName" type="LineEdit" parent="." unique_id=373093515]
+layout_mode = 0
+offset_left = 1076.0
+offset_top = 659.0
+offset_right = 1319.0
+offset_bottom = 721.0
+placeholder_text = "Enter Name"
+
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Host" to="." method="_on_host_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Join" to="." method="_on_join_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="text_submitted" from="EnterName" to="." method="_on_enter_name_text_submitted"]
