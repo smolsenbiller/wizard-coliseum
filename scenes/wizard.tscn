@@ -1,11 +1,16 @@
 [gd_scene format=3 uid="uid://dm0xpfooe2kgl"]
 
 [ext_resource type="Script" uid="uid://co6svk75ekqg6" path="res://scripts/wizard.gd" id="1_5ipgv"]
+[ext_resource type="Script" uid="uid://cl2lw4nvb5j8t" path="res://scripts/player_input.gd" id="2_4jkov"]
 [ext_resource type="Texture2D" uid="uid://foma77rgrx3p" path="res://assets/16-bit-wizard-frame1.png" id="2_8qlyk"]
 [ext_resource type="Texture2D" uid="uid://cbdw3yd2ltbwr" path="res://assets/16-bit-wizard-frame2.png" id="3_4jkov"]
 [ext_resource type="Texture2D" uid="uid://bk22jorre3j5u" path="res://assets/16-bit-wizard-frame3.png" id="4_ba5mt"]
 [ext_resource type="Texture2D" uid="uid://c3e3dbrhj32g6" path="res://assets/16-bit-wizard-frame4.png" id="5_var7a"]
 [ext_resource type="Texture2D" uid="uid://caf74oiwlothy" path="res://assets/wand.png" id="6_8qlyk"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_8qlyk"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_4jkov"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4v5ai"]
 size = Vector2(4, 13)
@@ -79,6 +84,13 @@ _data = {
 
 [node name="Wizard" type="CharacterBody2D" unique_id=478944359]
 script = ExtResource("1_5ipgv")
+
+[node name="ServerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=615585951]
+replication_config = SubResource("SceneReplicationConfig_8qlyk")
+
+[node name="PlayerInput" type="MultiplayerSynchronizer" parent="." unique_id=932709624]
+replication_config = SubResource("SceneReplicationConfig_4jkov")
+script = ExtResource("2_4jkov")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2003412689]
 texture = ExtResource("2_8qlyk")

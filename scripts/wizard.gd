@@ -3,6 +3,13 @@ extends CharacterBody2D
 const SPEED = 3000.0
 const JUMP_VELOCITY = -400.0
 
+# Set by the authority, synchronized on spawn.
+@export var player := 1 :
+	set(id):
+		player = id
+		# Give authority over the player input to the appropriate peer.
+		$PlayerInput.set_multiplayer_authority(id)
+
 @onready var animator : AnimationPlayer = $AnimationPlayer
 @onready var sprite : Sprite2D = $Sprite2D
 @onready var wand_sprite : Sprite2D = $Pivot/Wand
@@ -31,7 +38,6 @@ func _physics_process(delta: float) -> void:
 	if  character_look_direction.x < 0:
 		sprite.flip_h = true
 	
-	if Input.is_action_just_pressed("shoot"):
 		magic_blast()
 	
 	move_and_slide()
